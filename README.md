@@ -3,13 +3,13 @@
 This short intro is intended to inspire. Getting profficient takes years.
 
 
-## Download and install p§ython
+## Download and install Python
 
 [https://www.python.org/downloads/](https://www.python.org/downloads/)
 
 Install the necessary packages:
 
-```bash
+```
 $ pip install -U requests finplot
 Requirement already satisfied: requests in c:\prog\python311\lib\site-packages (2.28.1)
 Collecting requests
@@ -45,7 +45,7 @@ Successfully installed requests-2.28.2
 
 Start the interactive python prompt:
 
-```bash
+```
 $ python
 Python 3.11.1 (tags/v3.11.1:a7a450f, Dec  6 2022, 19:58:39) [MSC v.1934 64 bit (AMD64)] on win32
 Type "help", "copyright", "credits" or "license" for more information.
@@ -120,7 +120,7 @@ The first column is the index of the data frame (0-999). The next five ones cont
 ### Plot a candlestick chart
 
 ```python
-df['time open close high low'.split()].plot(kind='candle')
+df[['time','open','close','high','low']].plot(kind='candle')
 fplt.show()
 ```
 
@@ -155,8 +155,10 @@ df = pd.DataFrame(klines, columns=columns)
 df = df.astype({'time':'datetime64[ms]', 'open':float, 'close':float, 'high':float, 'low':float, 'volume':float})
 print(df)
 
-df['time open close high low'.split()].plot(kind='candle')
+df[['time','open','close','high','low']].plot(kind='candle')
 df.close.rolling(99).mean().plot()
 df.close.rolling(20).mean().plot()
 fplt.show()
 ```
+
+![feature1](https://raw.githubusercontent.com/highfestiva/learn-algo-trading/master/feature1.png)
